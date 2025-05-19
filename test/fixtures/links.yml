@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  scraped_page: one
+  href: MyText
+  name: MyText
+
+two:
+  scraped_page: two
+  href: MyText
+  name: MyText

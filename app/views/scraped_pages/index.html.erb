@@ -1,0 +1,14 @@
+<%= turbo_stream_from "scraped_pages_user_#{current_user.id}" %>
+
+<div class="max-w-4xl mx-auto px-4 py-6">
+  <div class="flex justify-between items-center mb-6">
+    <h2 class="text-2xl font-bold text-gray-800">Scraped Pages</h2>
+    <%= link_to "Add New Page", new_scraped_page_path, class: "inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition" %>
+  </div>
+
+  <turbo-frame id="scraped_pages_frame">
+    <div id="scraped_pages_list">
+      <%= render partial: "scraped_pages/list", locals: { scraped_pages: @scraped_pages } %>
+    </div>
+  </turbo-frame>
+</div>

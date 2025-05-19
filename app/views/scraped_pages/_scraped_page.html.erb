@@ -1,0 +1,20 @@
+<div id="<%= dom_id(scraped_page) %>" class="scraped-page-card bg-white rounded-xl shadow p-4 mb-4 border border-gray-200">
+  <h3 class="text-lg font-semibold text-blue-600 hover:underline mb-2">
+    <%= link_to scraped_page.title, scraped_page_path(scraped_page), data: { turbo_frame: "_top" } %>
+  </h3>
+
+  <p class="text-sm text-gray-700">
+    <span class="font-medium text-gray-500">Status:</span>
+    <span class="<%= status_color(scraped_page.status) %> capitalize"><%= scraped_page.status %></span>
+  </p>
+
+  <p class="text-sm text-gray-700 truncate">
+    <span class="font-medium text-gray-500">URL:</span>
+    <%= display_url(scraped_page.url) %>
+  </p>
+
+  <p class="text-sm text-gray-700">
+    <span class="font-medium text-gray-500">Links Found:</span>
+    <%= scraped_page.links.count %>
+  </p>
+</div>
