@@ -92,41 +92,34 @@ bin/rails test:system
 ```
 
 Tests use:
-
-DatabaseCleaner for isolation
-
-Capybara with rack_test (or switch to selenium_chrome_headless)
-
-Devise::Test::IntegrationHelpers for login during integration tests
+- DatabaseCleaner for isolation
+- Capybara with rack_test (or switch to selenium_chrome_headless)
+- Devise::Test::IntegrationHelpers for login during integration tests
 
 ## ⚙️ Core Features
-Submit a URL → background job (ScrapePageJob) fetches the HTML.
-
-Extracts links (<a href="">) with visible text.
-
-Displays results paginated (Kaminari).
-
-Turbo Streams update list in real-time on creation.
-
-Rescan feature to re-run scraping.
+- Submit a URL → background job (ScrapePageJob) fetches the HTML.
+- Extracts links (<a href="">) with visible text.
+- Displays results paginated (Kaminari).
+- Turbo Streams update list in real-time on creation.
+- Rescan feature to re-run scraping.
 
 ## 📦 Tech Stack Summary
-Feature	Tool
-Language	Ruby 3.4.4
-Framework	Rails 8.0.2
-CSS	TailwindCSS
-Auth	Devise
-Jobs	Sidekiq
-Pagination	Kaminari
-DB	SQLite (dev/test)
-JavaScript	Hotwire (Turbo + Stimulus)
-Testing	Minitest, Capybara
+| Feature  | Tool |
+| ------------- | ------------- |
+| Language  | Ruby 3.4.4  |
+| Framework  | Rails 8.0.2  |
+| CSS  | TailwindCSS  |
+| Auth  | Devise  |
+| Jobs  | Sidekiq  |
+| Pagination  | Kaminari  |
+| DB  | SQLite (dev/test)  |
+| JavaScript  | Hotwire (Turbo + Stimulus)  |
+| Testing  | Minitest, Capybara  |
+
 ## 🧠 Notes
 TailwindCSS is used via tailwindcss-rails.
 
-Asset pipeline uses propshaft.
-
-Paginates ScrapedPage and its links.
-
-ScrapePageJob uses Nokogiri to parse HTML and extract links.
+- Asset pipeline uses propshaft.
+- Paginates ScrapedPage and its links.
+- ScrapePageJob uses Nokogiri to parse HTML and extract links.
 
