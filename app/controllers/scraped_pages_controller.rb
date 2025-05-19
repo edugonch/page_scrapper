@@ -26,7 +26,7 @@ class ScrapedPagesController < ApplicationController
       ScrapePageJob.perform_later(@scraped_page.id)
   
       respond_to do |format|
-        format.turbo_stream  # <- renderiza create.turbo_stream.erb
+        format.turbo_stream 
         format.html { redirect_to scraped_pages_path, notice: "Scraping started" }
       end
     else
